@@ -29,16 +29,24 @@ pushd "$top/libidn"
             fail
         ;;
         "darwin")
-            make clean
             sdk=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.9.sdk/
-            opts="${TARGET_OPTS:--arch i386 -arch x86_64 -iwithsysroot $sdk -mmacosx-version-min=10.6}" 
-            CC="clang" CFLAGS="$opts" CXXFLAGS="$opts" LDFLAGS="$opts" \
-                ./configure --prefix="$stage"
+            opts="${TARGET_OPTS:--arch i386 -arch x86_64 -iwithsysroot $sdk -mmacosx-version-min=10.7}" 
+            CC="clang" CFLAGS="$opts -g" CXXFLAGS="$opts -g" LDFLAGS="$opts -g" \
+                ./configure --prefix="$stage" --libdir="$stage/lib/debug" \
+                --includedir="$stage/include/idn"
             make
             make install
 
-            mkdir -p "$stage/include/idn"
-            mv "$stage"/include/*.h "$stage/include/idn/"
+            make distclean
+
+            CC="clang" CFLAGS="$opts -O2" CXXFLAGS="$opts -O2" LDFLAGS="$opts -O3" \
+                ./configure --prefix="$stage" --libdir="$stage/lib/release" \
+                --includedir="$stage/include/idn"
+            make
+            make install
+
+			make distclean
+
         ;;
         "linux")
             echo "Linux is not supported yet"

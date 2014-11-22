@@ -63,7 +63,8 @@
           </map>
           <key>manifest</key>
           <array>
-            <string>lib/libidn.a</string>
+            <string>lib/debug/libidn.a</string>
+            <string>lib/release/libidn.a</string>
           </array>
           <key>name</key>
           <string>darwin</string>
