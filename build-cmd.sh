@@ -37,6 +37,11 @@ pushd "$top/libidn"
             make
             make install
 
+            # conditionally run unit tests
+            if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
+                make check
+            fi
+
             make distclean
 
             CC="clang" CFLAGS="$opts -O2" CXXFLAGS="$opts -O2" LDFLAGS="$opts -O3" \
@@ -45,12 +50,75 @@ pushd "$top/libidn"
             make
             make install
 
-			make distclean
+            # conditionally run unit tests
+            if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
+                make check
+            fi
+
+            make distclean
 
         ;;
         "linux")
-            echo "Linux is not supported yet"
-            fail
+            #This is literally black magic.
+            touch configure.ac aclocal.m4 configure Makefile.am Makefile.in
+
+            opts="${TARGET_OPTS:--m32}" 
+            CFLAGS="$opts -g" CXXFLAGS="$opts -g" LDFLAGS="$opts -g" \
+                ./configure --prefix="$stage" --libdir="$stage/lib/debug" \
+                --includedir="$stage/include/idn"
+            make
+            make install
+
+            # conditionally run unit tests
+            if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
+                make check
+            fi
+
+            make distclean
+
+            CFLAGS="$opts -O2" CXXFLAGS="$opts -O2" LDFLAGS="$opts -O2" \
+                ./configure --prefix="$stage" --libdir="$stage/lib/release" \
+                --includedir="$stage/include/idn"
+            make
+            make install
+
+            # conditionally run unit tests
+            if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
+                make check
+            fi
+
+            make distclean
+        ;;
+        "linux64")
+            #This is literally black magic.
+            touch configure.ac aclocal.m4 configure Makefile.am Makefile.in
+
+            opts="${TARGET_OPTS:--m64}" 
+            CFLAGS="$opts -Og -g" CXXFLAGS="$opts -Og -g" LDFLAGS="$opts -g" \
+                ./configure --prefix="$stage" --libdir="$stage/lib/debug" \
+                --includedir="$stage/include/idn"
+            make
+            make install
+
+            # conditionally run unit tests
+            if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
+                make check
+            fi
+
+            make distclean
+
+            CFLAGS="$opts -O2" CXXFLAGS="$opts -O2" LDFLAGS="$opts" \
+                ./configure --prefix="$stage" --libdir="$stage/lib/release" \
+                --includedir="$stage/include/idn"
+            make
+            make install
+
+            # conditionally run unit tests
+            if [ "${DISABLE_UNIT_TESTS:-0}" = "0" ]; then
+                make check
+            fi
+
+            make distclean
         ;;
     esac
 
