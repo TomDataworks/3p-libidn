@@ -5,6 +5,8 @@ set -x
 # make errors fatal
 set -e
 
+IDN_VERSION="1.38"
+
 # Check autobuild is around or fail
 if [ -z "$AUTOBUILD" ] ; then
     fail
@@ -21,6 +23,8 @@ set -x
 
 top="$(dirname "$0")"
 stage="$(pwd)"
+
+echo "${IDN_VERSION}" > "${stage}/VERSION.txt"
 
 pushd "$top/libidn"
     case "$AUTOBUILD_PLATFORM" in
