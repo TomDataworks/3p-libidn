@@ -1,5 +1,5 @@
 /* idn.c --- Command line interface to libidn.
- * Copyright (C) 2003-2013 Simon Josefsson
+ * Copyright (C) 2003-2015 Simon Josefsson
  *
  * This file is part of GNU Libidn.
  *
@@ -48,7 +48,7 @@
 #include "idn_cmd.h"
 
 #define GREETING \
-  "Copyright 2002-2013 Simon Josefsson.\n"				 \
+  "Copyright 2002-2015 Simon Josefsson.\n"				 \
   "GNU Libidn is free software with ABSOLUTELY NO WARRANTY.  For more\n" \
   "information about these matters, see <http://www.gnu.org/licenses/>.\n"
 
@@ -568,6 +568,8 @@ main (int argc, char *argv[])
 
 	  free (p);
 	}
+
+      fflush (stdout);
     }
   while (!feof (stdin) && !ferror (stdin) && (args_info.inputs_num == 0 ||
 					      cmdn < args_info.inputs_num));

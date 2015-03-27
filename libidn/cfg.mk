@@ -1,4 +1,4 @@
-# Copyright (C) 2006-2013 Simon Josefsson
+# Copyright (C) 2006-2015 Simon Josefsson
 #
 # This file is part of GNU Libidn.
 #
@@ -47,7 +47,9 @@ autoreconf: doc/Makefile.gdoc
 		cp $$f `echo $$f | sed 's/.in//'`; \
 	done
 	touch ChangeLog
+	mv build-aux/config.rpath build-aux/config.rpath-
 	test -f ./configure || autoreconf --install
+	mv build-aux/config.rpath- build-aux/config.rpath
 
 update-po: refresh-po
 	for f in `ls po/*.po | grep -v quot.po`; do \
@@ -177,7 +179,7 @@ binaries-upload:
 	cd windows && make -f libidn4win.mk upload VERSION=$(VERSION)
 
 source:
-	git tag -u b565716f -m $(VERSION) $(tag)
+	git tag -u 54265e8c -m $(VERSION) $(tag)
 
 release-check: syntax-check i18n tarball binaries gendoc-copy gtkdoc-copy coverage-my coverage-copy clang clang-copy cyclo-copy javadoc-copy doxygen-copy
 

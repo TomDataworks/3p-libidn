@@ -38,6 +38,15 @@ pr29
 @PR29_PROBLEM: 
 @PR29_STRINGPREP_ERROR: 
 
+<!-- ##### FUNCTION pr29_strerror ##### -->
+<para>
+
+</para>
+
+@rc: 
+@Returns: 
+
+
 <!-- ##### FUNCTION pr29_4 ##### -->
 <para>
 
@@ -63,15 +72,6 @@ pr29
 </para>
 
 @in: 
-@Returns: 
-
-
-<!-- ##### FUNCTION pr29_strerror ##### -->
-<para>
-
-</para>
-
-@rc: 
 @Returns: 
 
 

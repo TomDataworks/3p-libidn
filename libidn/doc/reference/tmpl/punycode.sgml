@@ -39,17 +39,19 @@ punycode
 @PUNYCODE_BIG_OUTPUT: 
 @PUNYCODE_OVERFLOW: 
 
-<!-- ##### FUNCTION punycode_decode ##### -->
+<!-- ##### FUNCTION punycode_strerror ##### -->
 <para>
 
 </para>
 
-@input_length: 
-@input: 
-@output_length: 
-@output: 
-@case_flags: 
+@rc: 
 @Returns: 
+
+
+<!-- ##### TYPEDEF punycode_uint ##### -->
+<para>
+
+</para>
 
 
 <!-- ##### FUNCTION punycode_encode ##### -->
@@ -65,18 +67,16 @@ punycode
 @Returns: 
 
 
-<!-- ##### FUNCTION punycode_strerror ##### -->
+<!-- ##### FUNCTION punycode_decode ##### -->
 <para>
 
 </para>
 
-@rc: 
+@input_length: 
+@input: 
+@output_length: 
+@output: 
+@case_flags: 
 @Returns: 
-
-
-<!-- ##### TYPEDEF punycode_uint ##### -->
-<para>
-
-</para>
 
 

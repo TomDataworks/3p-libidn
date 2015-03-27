@@ -1,5 +1,5 @@
 # DO NOT EDIT! GENERATED AUTOMATICALLY!
-# Copyright (C) 2002-2013 Free Software Foundation, Inc.
+# Copyright (C) 2002-2015 Free Software Foundation, Inc.
 #
 # This file is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -38,6 +38,7 @@ AC_DEFUN([gl_EARLY],
   m4_pattern_allow([^gl_LIBOBJS$])dnl a variable
   m4_pattern_allow([^gl_LTLIBOBJS$])dnl a variable
   AC_REQUIRE([gl_PROG_AR_RANLIB])
+  # Code from module absolute-header:
   # Code from module alloca-opt:
   # Code from module alloca-opt-tests:
   # Code from module autobuild:
@@ -79,6 +80,8 @@ AC_DEFUN([gl_EARLY],
   # Code from module getopt-posix:
   # Code from module getopt-posix-tests:
   # Code from module gettext-h:
+  # Code from module gettimeofday:
+  # Code from module gettimeofday-tests:
   # Code from module gnumakefile:
   # Code from module gnupload:
   # Code from module ignore-value:
@@ -119,6 +122,8 @@ AC_DEFUN([gl_EARLY],
   # Code from module ssize_t:
   # Code from module stat:
   # Code from module stat-tests:
+  # Code from module stdalign:
+  # Code from module stdalign-tests:
   # Code from module stdarg:
   dnl Some compilers (e.g., AIX 5.3 cc) need to be in c99 mode
   dnl for the builtin va_copy to work.  With Autoconf 2.60 or later,
@@ -141,6 +146,8 @@ AC_DEFUN([gl_EARLY],
   # Code from module symlink:
   # Code from module symlink-tests:
   # Code from module sys_stat:
+  # Code from module sys_time:
+  # Code from module sys_time-tests:
   # Code from module sys_types:
   # Code from module sys_types-tests:
   # Code from module test-framework-sh:
@@ -224,6 +231,7 @@ AC_DEFUN([gl_INIT],
           [GNUmakefile=$GNUmakefile])])
   AC_CONFIG_COMMANDS_PRE([m4_ifdef([AH_HEADER],
     [AC_SUBST([CONFIG_INCLUDE], m4_defn([AH_HEADER]))])])
+  AC_REQUIRE([AC_PROG_SED])
   gl_MSVC_INVAL
   if test $HAVE_MSVC_INVALID_PARAMETER_HANDLER = 1; then
     AC_LIBOBJ([msvc-inval])
@@ -238,6 +246,7 @@ AC_DEFUN([gl_INIT],
   gt_TYPE_SSIZE_T
   gl_STDARG_H
   gl_STDDEF_H
+  gl_STDIO_H
   gl_FUNC_STRERROR
   if test $REPLACE_STRERROR = 1; then
     AC_LIBOBJ([strerror])
@@ -335,11 +344,17 @@ changequote([, ])dnl
   fi
   gl_UNISTD_MODULE_INDICATOR([getcwd])
   gl_FUNC_GETDTABLESIZE
-  if test $HAVE_GETDTABLESIZE = 0; then
+  if test $HAVE_GETDTABLESIZE = 0 || test $REPLACE_GETDTABLESIZE = 1; then
     AC_LIBOBJ([getdtablesize])
     gl_PREREQ_GETDTABLESIZE
   fi
   gl_UNISTD_MODULE_INDICATOR([getdtablesize])
+  gl_FUNC_GETTIMEOFDAY
+  if test $HAVE_GETTIMEOFDAY = 0 || test $REPLACE_GETTIMEOFDAY = 1; then
+    AC_LIBOBJ([gettimeofday])
+    gl_PREREQ_GETTIMEOFDAY
+  fi
+  gl_SYS_TIME_MODULE_INDICATOR([gettimeofday])
   gl_INTTYPES_H
   gl_INTTYPES_INCOMPLETE
   AC_REQUIRE([gl_LARGEFILE])
@@ -380,11 +395,11 @@ changequote([, ])dnl
     gl_PREREQ_STAT
   fi
   gl_SYS_STAT_MODULE_INDICATOR([stat])
+  gl_STDALIGN_H
   AM_STDBOOL_H
   gl_STDINT_H
   AC_REQUIRE([gt_TYPE_WCHAR_T])
   AC_REQUIRE([gt_TYPE_WINT_T])
-  gl_STDIO_H
   gl_STDLIB_H
   gl_FUNC_SYMLINK
   if test $HAVE_SYMLINK = 0 || test $REPLACE_SYMLINK = 1; then
@@ -392,6 +407,8 @@ changequote([, ])dnl
   fi
   gl_UNISTD_MODULE_INDICATOR([symlink])
   gl_HEADER_SYS_STAT_H
+  AC_PROG_MKDIR_P
+  gl_HEADER_SYS_TIME_H
   AC_PROG_MKDIR_P
   gl_HEADER_TIME_H
   gl_FUNC_UNSETENV
@@ -511,6 +528,7 @@ AC_DEFUN([gl_FILE_LIST], [
   build-aux/vc-list-files
   doc/fdl-1.3.texi
   doc/gendocs_template
+  doc/gendocs_template_min
   lib/errno.in.h
   lib/error.c
   lib/error.h
@@ -528,6 +546,7 @@ AC_DEFUN([gl_FILE_LIST], [
   lib/progname.h
   lib/stdarg.in.h
   lib/stddef.in.h
+  lib/stdio.in.h
   lib/strerror-override.c
   lib/strerror-override.h
   lib/strerror.c
@@ -539,6 +558,7 @@ AC_DEFUN([gl_FILE_LIST], [
   lib/version-etc.c
   lib/version-etc.h
   m4/00gnulib.m4
+  m4/absolute-header.m4
   m4/alloca.m4
   m4/autobuild.m4
   m4/close.m4
@@ -559,6 +579,7 @@ AC_DEFUN([gl_FILE_LIST], [
   m4/getcwd.m4
   m4/getdtablesize.m4
   m4/getopt.m4
+  m4/gettimeofday.m4
   m4/gnulib-common.m4
   m4/include_next.m4
   m4/inttypes-pri.m4
@@ -581,6 +602,7 @@ AC_DEFUN([gl_FILE_LIST], [
   m4/setenv.m4
   m4/ssize_t.m4
   m4/stat.m4
+  m4/stdalign.m4
   m4/stdarg.m4
   m4/stdbool.m4
   m4/stddef_h.m4
@@ -592,6 +614,7 @@ AC_DEFUN([gl_FILE_LIST], [
   m4/symlink.m4
   m4/sys_socket_h.m4
   m4/sys_stat_h.m4
+  m4/sys_time_h.m4
   m4/sys_types_h.m4
   m4/time_h.m4
   m4/unistd_h.m4
@@ -623,6 +646,7 @@ AC_DEFUN([gl_FILE_LIST], [
   tests/test-getopt.c
   tests/test-getopt.h
   tests/test-getopt_long.h
+  tests/test-gettimeofday.c
   tests/test-ignore-value.c
   tests/test-init.sh
   tests/test-intprops.c
@@ -636,6 +660,7 @@ AC_DEFUN([gl_FILE_LIST], [
   tests/test-setenv.c
   tests/test-stat.c
   tests/test-stat.h
+  tests/test-stdalign.c
   tests/test-stdbool.c
   tests/test-stddef.c
   tests/test-stdint.c
@@ -643,6 +668,7 @@ AC_DEFUN([gl_FILE_LIST], [
   tests/test-strerror.c
   tests/test-symlink.c
   tests/test-symlink.h
+  tests/test-sys_time.c
   tests/test-sys_types.c
   tests/test-unsetenv.c
   tests/test-vc-list-files-cvs.sh
@@ -664,6 +690,7 @@ AC_DEFUN([gl_FILE_LIST], [
   tests=lib/fstat.c
   tests=lib/getcwd-lgpl.c
   tests=lib/getdtablesize.c
+  tests=lib/gettimeofday.c
   tests=lib/ignore-value.h
   tests=lib/inttypes.in.h
   tests=lib/lstat.c
@@ -677,12 +704,13 @@ AC_DEFUN([gl_FILE_LIST], [
   tests=lib/same-inode.h
   tests=lib/setenv.c
   tests=lib/stat.c
+  tests=lib/stdalign.in.h
   tests=lib/stdbool.in.h
   tests=lib/stdint.in.h
-  tests=lib/stdio.in.h
   tests=lib/stdlib.in.h
   tests=lib/symlink.c
   tests=lib/sys_stat.in.h
+  tests=lib/sys_time.in.h
   tests=lib/time.in.h
   tests=lib/unsetenv.c
   tests=lib/version-etc-fsf.c

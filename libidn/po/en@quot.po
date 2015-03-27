@@ -1,7 +1,7 @@
 # English translations for libidn package.
-# Copyright (C) 2013 Simon Josefsson
+# Copyright (C) 2015 Simon Josefsson
 # This file is distributed under the same license as the libidn package.
-# Automatically generated, 2013.
+# Automatically generated, 2015.
 #
 # All this catalog "translates" are quotation characters.
 # The msgids must be ASCII and therefore cannot contain real quotation
@@ -27,10 +27,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libidn 1.28\n"
+"Project-Id-Version: libidn 1.30\n"
 "Report-Msgid-Bugs-To: bug-libidn@gnu.org\n"
-"POT-Creation-Date: 2013-07-10 13:54+0200\n"
-"PO-Revision-Date: 2013-07-10 13:54+0200\n"
+"POT-Creation-Date: 2015-03-02 11:36+0100\n"
+"PO-Revision-Date: 2015-03-02 11:36+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: en@quot\n"
