@@ -5,7 +5,7 @@ set -x
 # make errors fatal
 set -e
 
-IDN_VERSION="1.30"
+IDN_VERSION="1.31"
 
 # Check autobuild is around or fail
 if [ -z "$AUTOBUILD" ] ; then
