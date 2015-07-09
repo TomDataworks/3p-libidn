@@ -1,5 +1,5 @@
-/* tst_idna4.c --- Self tests for memory leak regression.
- * Copyright (C) 2011-2015 Simon Josefsson
+/* tst_badutf8.c --- Self tests for malformed UTF-8 regressions.
+ * Copyright (C) 2015 Simon Josefsson
  *
  * This file is part of GNU Libidn.
  *
@@ -35,20 +35,16 @@
 void
 doit (void)
 {
+  char *badutf8 = strdup ("\x7e\x64\x61\x72\x10\x2f\x2f\xf9\x2b\x71"
+			  "\x60\x79\x7b\x2e\x63\x75\x2b\x61\x65\x72"
+			  "\x75\x65\x56\x66\x7f\x62\xc5\x76\xe5\x00");
+  char *s = NULL;
   int rc;
-  char *out = NULL;
 
-  rc = idna_to_ascii_8z("search...", &out, 0);
-  if (rc != IDNA_INVALID_LENGTH)
-    fail ("unexpected rc %d\n", rc);
+  rc = idna_to_ascii_8z (badutf8, &s, 0);
+  free (badutf8);
+  if (rc != IDNA_ICONV_ERROR)
+    fail ("rc %d\n", rc);
 
-  rc = idna_to_ascii_8z("google.com................point", &out, 0);
-  if (rc != IDNA_INVALID_LENGTH)
-    fail ("unexpected rc %d\n", rc);
-
-  rc = idna_to_ascii_8z("Loading...\xC2\xB0\xC2\xB0\xC2\xB0\xC2\xB0\xC2\xB0"
-			"\xC2\xB0\xC2\xB0\xC2\xB0\xC2\xB0\xC2\xB0\xC2\xB0"
-			"\xC2\xB0\xC2\xB0\xC2\xB0]", &out, 0);
-  if (rc != IDNA_INVALID_LENGTH)
-    fail ("unexpected rc %d\n", rc);
+  idn_free (s);
 }

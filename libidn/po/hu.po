@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libidn 1.29\n"
 "Report-Msgid-Bugs-To: bug-libidn@gnu.org\n"
-"POT-Creation-Date: 2015-03-02 11:36+0100\n"
+"POT-Creation-Date: 2015-07-08 23:04+0200\n"
 "PO-Revision-Date: 2014-08-31 15:46+0200\n"
 "Last-Translator: Balázs Úr <urbalazs@gmail.com>\n"
 "Language-Team: Hungarian <translation-team-hu@lists.sourceforge.net>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "X-Generator: Lokalize 1.5\n"
 
 #: lib/strerror-idna.c:82 lib/strerror-pr29.c:66 lib/strerror-punycode.c:66
-#: lib/strerror-stringprep.c:86 lib/strerror-tld.c:68
+#: lib/strerror-stringprep.c:87 lib/strerror-tld.c:68
 msgid "Success"
 msgstr "Sikerült"
 
@@ -55,11 +55,11 @@ msgstr "A szöveg nem idempotens a ToASCII alatt"
 msgid "Input already contain ACE prefix (`xn--')"
 msgstr "A bemenet már tartalmaz ACE előtagot („xn--”)"
 
-#: lib/strerror-idna.c:118 lib/strerror-tld.c:84
-msgid "System iconv failed"
-msgstr "Rendszer iconv sikertelen"
+#: lib/strerror-idna.c:118
+msgid "Could not convert string in locale encoding"
+msgstr ""
 
-#: lib/strerror-idna.c:122 lib/strerror-stringprep.c:130 lib/strerror-tld.c:80
+#: lib/strerror-idna.c:122 lib/strerror-stringprep.c:134 lib/strerror-tld.c:80
 msgid "Cannot allocate memory"
 msgstr "Nem lehet memóriát lefoglalni"
 
@@ -68,7 +68,7 @@ msgid "System dlopen failed"
 msgstr "Rendszer dlopen sikertelen"
 
 #: lib/strerror-idna.c:130 lib/strerror-pr29.c:78 lib/strerror-punycode.c:82
-#: lib/strerror-stringprep.c:134 lib/strerror-tld.c:92
+#: lib/strerror-stringprep.c:138 lib/strerror-tld.c:92
 msgid "Unknown error"
 msgstr "Ismeretlen hiba"
 
@@ -80,7 +80,7 @@ msgstr "A szöveg nem idempotens a Unicode NFKC normalizálás alatt"
 msgid "Invalid input"
 msgstr "Érvénytelen bemenet"
 
-#: lib/strerror-punycode.c:74 lib/strerror-stringprep.c:110
+#: lib/strerror-punycode.c:74 lib/strerror-stringprep.c:111
 msgid "Output would exceed the buffer space provided"
 msgstr "A kimenet túllépné a megadott pufferméretet"
 
@@ -88,39 +88,43 @@ msgstr "A kimenet túllépné a megadott pufferméretet"
 msgid "String size limit exceeded"
 msgstr "A szövegméret korlát elérve"
 
-#: lib/strerror-stringprep.c:90
+#: lib/strerror-stringprep.c:91
 msgid "Forbidden unassigned code points in input"
 msgstr "Tiltott nem hozzárendelt kódpontok a bemeneten"
 
-#: lib/strerror-stringprep.c:94
+#: lib/strerror-stringprep.c:95
 msgid "Prohibited code points in input"
 msgstr "Tiltott kódpontok a bemeneten"
 
-#: lib/strerror-stringprep.c:98
+#: lib/strerror-stringprep.c:99
 msgid "Conflicting bidirectional properties in input"
 msgstr "Ütköző kétirányú tulajdonságok a bemeneten"
 
-#: lib/strerror-stringprep.c:102
+#: lib/strerror-stringprep.c:103
 msgid "Malformed bidirectional string"
 msgstr "Helytelenül formázott kétirányú szöveg"
 
-#: lib/strerror-stringprep.c:106
+#: lib/strerror-stringprep.c:107
 msgid "Prohibited bidirectional code points in input"
 msgstr "Tiltott kétirányú kódpontok a bemeneten"
 
-#: lib/strerror-stringprep.c:114
+#: lib/strerror-stringprep.c:115
 msgid "Error in stringprep profile definition"
 msgstr "Hiba a stringprep profil definícióban"
 
-#: lib/strerror-stringprep.c:118
+#: lib/strerror-stringprep.c:119
 msgid "Flag conflict with profile"
 msgstr "Jelzőütközés a profillal"
 
-#: lib/strerror-stringprep.c:122
+#: lib/strerror-stringprep.c:123
 msgid "Unknown profile"
 msgstr "Ismeretlen profil"
 
 #: lib/strerror-stringprep.c:126
+msgid "Could not convert string in locale encoding."
+msgstr ""
+
+#: lib/strerror-stringprep.c:130
 msgid "Unicode normalization failed (internal error)"
 msgstr "Unicode normalizálás sikertelen (belső hiba)"
 
@@ -131,6 +135,10 @@ msgstr "A felsőszintű tartomány tiltja a kódpontokat"
 #: lib/strerror-tld.c:76
 msgid "Missing input"
 msgstr "Hiányzó bemenet"
+
+#: lib/strerror-tld.c:84
+msgid "System iconv failed"
+msgstr "Rendszer iconv sikertelen"
 
 #: lib/strerror-tld.c:88
 msgid "No top-level domain found in input"

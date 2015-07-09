@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libidn 1.24\n"
 "Report-Msgid-Bugs-To: bug-libidn@gnu.org\n"
-"POT-Creation-Date: 2015-03-02 11:36+0100\n"
+"POT-Creation-Date: 2015-07-08 23:04+0200\n"
 "PO-Revision-Date: 2012-05-18 17:42+0700\n"
 "Last-Translator: Andhika Padmawan <andhika.padmawan@gmail.com>\n"
 "Language-Team: Indonesian <translation-team-id@lists.sourceforge.net>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: lib/strerror-idna.c:82 lib/strerror-pr29.c:66 lib/strerror-punycode.c:66
-#: lib/strerror-stringprep.c:86 lib/strerror-tld.c:68
+#: lib/strerror-stringprep.c:87 lib/strerror-tld.c:68
 msgid "Success"
 msgstr "Sukses"
 
@@ -53,11 +53,11 @@ msgstr "Benar tidak idempoten di bawah ToASCII"
 msgid "Input already contain ACE prefix (`xn--')"
 msgstr "Masukan telah berisi prefiks ACE (`xn--')"
 
-#: lib/strerror-idna.c:118 lib/strerror-tld.c:84
-msgid "System iconv failed"
-msgstr "Sistem iconv gagal"
+#: lib/strerror-idna.c:118
+msgid "Could not convert string in locale encoding"
+msgstr ""
 
-#: lib/strerror-idna.c:122 lib/strerror-stringprep.c:130 lib/strerror-tld.c:80
+#: lib/strerror-idna.c:122 lib/strerror-stringprep.c:134 lib/strerror-tld.c:80
 msgid "Cannot allocate memory"
 msgstr "Tak dapat alokasi memori"
 
@@ -66,7 +66,7 @@ msgid "System dlopen failed"
 msgstr "Sistem dlopen gagal"
 
 #: lib/strerror-idna.c:130 lib/strerror-pr29.c:78 lib/strerror-punycode.c:82
-#: lib/strerror-stringprep.c:134 lib/strerror-tld.c:92
+#: lib/strerror-stringprep.c:138 lib/strerror-tld.c:92
 msgid "Unknown error"
 msgstr "Galat tak dikenal"
 
@@ -78,7 +78,7 @@ msgstr "Benang tak idempoten di bawah normalisasi Unicode NFKC"
 msgid "Invalid input"
 msgstr "Masukan tidak sah"
 
-#: lib/strerror-punycode.c:74 lib/strerror-stringprep.c:110
+#: lib/strerror-punycode.c:74 lib/strerror-stringprep.c:111
 msgid "Output would exceed the buffer space provided"
 msgstr "Keluaran akan melebihi ruang penyangga yang disediakan"
 
@@ -86,39 +86,43 @@ msgstr "Keluaran akan melebihi ruang penyangga yang disediakan"
 msgid "String size limit exceeded"
 msgstr "Batas ruang benang tercapai"
 
-#: lib/strerror-stringprep.c:90
+#: lib/strerror-stringprep.c:91
 msgid "Forbidden unassigned code points in input"
 msgstr "Titik kode tak ditugaskan terlarang di masukan"
 
-#: lib/strerror-stringprep.c:94
+#: lib/strerror-stringprep.c:95
 msgid "Prohibited code points in input"
 msgstr "Titik kode terlarang di masukan"
 
-#: lib/strerror-stringprep.c:98
+#: lib/strerror-stringprep.c:99
 msgid "Conflicting bidirectional properties in input"
 msgstr "Properti dwiarah konflik di masukan"
 
-#: lib/strerror-stringprep.c:102
+#: lib/strerror-stringprep.c:103
 msgid "Malformed bidirectional string"
 msgstr "Benang dwiarah salah bentuk"
 
-#: lib/strerror-stringprep.c:106
+#: lib/strerror-stringprep.c:107
 msgid "Prohibited bidirectional code points in input"
 msgstr "Titik kode dwiarah terlarang di masukan"
 
-#: lib/strerror-stringprep.c:114
+#: lib/strerror-stringprep.c:115
 msgid "Error in stringprep profile definition"
 msgstr "Galat di definisi profil stringprep"
 
-#: lib/strerror-stringprep.c:118
+#: lib/strerror-stringprep.c:119
 msgid "Flag conflict with profile"
 msgstr "Bendera konflik dengan profil"
 
-#: lib/strerror-stringprep.c:122
+#: lib/strerror-stringprep.c:123
 msgid "Unknown profile"
 msgstr "Profil tak diketahui"
 
 #: lib/strerror-stringprep.c:126
+msgid "Could not convert string in locale encoding."
+msgstr ""
+
+#: lib/strerror-stringprep.c:130
 msgid "Unicode normalization failed (internal error)"
 msgstr "Normalisasi unicode gagal (galat internal)"
 
@@ -129,6 +133,10 @@ msgstr "Titik kode dilarang oleh ranah level atas"
 #: lib/strerror-tld.c:76
 msgid "Missing input"
 msgstr "Masukan hilang"
+
+#: lib/strerror-tld.c:84
+msgid "System iconv failed"
+msgstr "Sistem iconv gagal"
 
 #: lib/strerror-tld.c:88
 msgid "No top-level domain found in input"

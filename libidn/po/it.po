@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libidn 1.21\n"
 "Report-Msgid-Bugs-To: bug-libidn@gnu.org\n"
-"POT-Creation-Date: 2015-03-02 11:36+0100\n"
+"POT-Creation-Date: 2015-07-08 23:04+0200\n"
 "PO-Revision-Date: 2011-12-05 17:30+0000\n"
 "Last-Translator: Marco Colombo <m.colombo@ed.ac.uk>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: lib/strerror-idna.c:82 lib/strerror-pr29.c:66 lib/strerror-punycode.c:66
-#: lib/strerror-stringprep.c:86 lib/strerror-tld.c:68
+#: lib/strerror-stringprep.c:87 lib/strerror-tld.c:68
 msgid "Success"
 msgstr "Successo"
 
@@ -52,11 +52,11 @@ msgstr "La stringa non è idempotente per ToASCII"
 msgid "Input already contain ACE prefix (`xn--')"
 msgstr "L'input contiene già il prefisso ACE (\"xn--\")"
 
-#: lib/strerror-idna.c:118 lib/strerror-tld.c:84
-msgid "System iconv failed"
-msgstr "Chiamata di sistema iconv non riuscita"
+#: lib/strerror-idna.c:118
+msgid "Could not convert string in locale encoding"
+msgstr ""
 
-#: lib/strerror-idna.c:122 lib/strerror-stringprep.c:130 lib/strerror-tld.c:80
+#: lib/strerror-idna.c:122 lib/strerror-stringprep.c:134 lib/strerror-tld.c:80
 msgid "Cannot allocate memory"
 msgstr "Impossibile allocare memoria"
 
@@ -65,7 +65,7 @@ msgid "System dlopen failed"
 msgstr "Chiamata di sistema dlopen non riuscita"
 
 #: lib/strerror-idna.c:130 lib/strerror-pr29.c:78 lib/strerror-punycode.c:82
-#: lib/strerror-stringprep.c:134 lib/strerror-tld.c:92
+#: lib/strerror-stringprep.c:138 lib/strerror-tld.c:92
 msgid "Unknown error"
 msgstr "Errore sconosciuto"
 
@@ -77,7 +77,7 @@ msgstr "La stringa non è idempotente per la normalizzazione Unicode NFKC"
 msgid "Invalid input"
 msgstr "Input non valido"
 
-#: lib/strerror-punycode.c:74 lib/strerror-stringprep.c:110
+#: lib/strerror-punycode.c:74 lib/strerror-stringprep.c:111
 msgid "Output would exceed the buffer space provided"
 msgstr "L'output eccederebbe il buffer fornito"
 
@@ -85,39 +85,43 @@ msgstr "L'output eccederebbe il buffer fornito"
 msgid "String size limit exceeded"
 msgstr "Limite di grandezza della stringa superato"
 
-#: lib/strerror-stringprep.c:90
+#: lib/strerror-stringprep.c:91
 msgid "Forbidden unassigned code points in input"
 msgstr "Codepoints non assegnati proibiti nell'input"
 
-#: lib/strerror-stringprep.c:94
+#: lib/strerror-stringprep.c:95
 msgid "Prohibited code points in input"
 msgstr "Codepoints proibiti nell'input"
 
-#: lib/strerror-stringprep.c:98
+#: lib/strerror-stringprep.c:99
 msgid "Conflicting bidirectional properties in input"
 msgstr "Proprietà bidirezionali in conflitto nell'input"
 
-#: lib/strerror-stringprep.c:102
+#: lib/strerror-stringprep.c:103
 msgid "Malformed bidirectional string"
 msgstr "Stringa bidirezionale malformata"
 
-#: lib/strerror-stringprep.c:106
+#: lib/strerror-stringprep.c:107
 msgid "Prohibited bidirectional code points in input"
 msgstr "Codepoints bidirezionali proibiti nell'input"
 
-#: lib/strerror-stringprep.c:114
+#: lib/strerror-stringprep.c:115
 msgid "Error in stringprep profile definition"
 msgstr "Errore nella definizione del profilo stringprep"
 
-#: lib/strerror-stringprep.c:118
+#: lib/strerror-stringprep.c:119
 msgid "Flag conflict with profile"
 msgstr "Flag in conflitto con il profilo"
 
-#: lib/strerror-stringprep.c:122
+#: lib/strerror-stringprep.c:123
 msgid "Unknown profile"
 msgstr "Profilo sconosciuto"
 
 #: lib/strerror-stringprep.c:126
+msgid "Could not convert string in locale encoding."
+msgstr ""
+
+#: lib/strerror-stringprep.c:130
 msgid "Unicode normalization failed (internal error)"
 msgstr "Normalizzazione Unicode non riuscita (errore interno)"
 
@@ -128,6 +132,10 @@ msgstr "Codepoints proibiti dal dominio di primo livello"
 #: lib/strerror-tld.c:76
 msgid "Missing input"
 msgstr "Input mancante"
+
+#: lib/strerror-tld.c:84
+msgid "System iconv failed"
+msgstr "Chiamata di sistema iconv non riuscita"
 
 #: lib/strerror-tld.c:88
 msgid "No top-level domain found in input"

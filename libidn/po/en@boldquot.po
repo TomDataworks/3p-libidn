@@ -30,10 +30,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libidn 1.30\n"
+"Project-Id-Version: libidn 1.31\n"
 "Report-Msgid-Bugs-To: bug-libidn@gnu.org\n"
-"POT-Creation-Date: 2015-03-02 11:36+0100\n"
-"PO-Revision-Date: 2015-03-02 11:36+0100\n"
+"POT-Creation-Date: 2015-07-08 23:04+0200\n"
+"PO-Revision-Date: 2015-07-08 23:04+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: en@boldquot\n"
@@ -43,7 +43,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: lib/strerror-idna.c:82 lib/strerror-pr29.c:66 lib/strerror-punycode.c:66
-#: lib/strerror-stringprep.c:86 lib/strerror-tld.c:68
+#: lib/strerror-stringprep.c:87 lib/strerror-tld.c:68
 msgid "Success"
 msgstr "Success"
 
@@ -79,11 +79,11 @@ msgstr "String not idempotent under ToASCII"
 msgid "Input already contain ACE prefix (`xn--')"
 msgstr "Input already contain ACE prefix (‘[1mxn--[0m’)"
 
-#: lib/strerror-idna.c:118 lib/strerror-tld.c:84
-msgid "System iconv failed"
-msgstr "System iconv failed"
+#: lib/strerror-idna.c:118
+msgid "Could not convert string in locale encoding"
+msgstr "Could not convert string in locale encoding"
 
-#: lib/strerror-idna.c:122 lib/strerror-stringprep.c:130 lib/strerror-tld.c:80
+#: lib/strerror-idna.c:122 lib/strerror-stringprep.c:134 lib/strerror-tld.c:80
 msgid "Cannot allocate memory"
 msgstr "Cannot allocate memory"
 
@@ -92,7 +92,7 @@ msgid "System dlopen failed"
 msgstr "System dlopen failed"
 
 #: lib/strerror-idna.c:130 lib/strerror-pr29.c:78 lib/strerror-punycode.c:82
-#: lib/strerror-stringprep.c:134 lib/strerror-tld.c:92
+#: lib/strerror-stringprep.c:138 lib/strerror-tld.c:92
 msgid "Unknown error"
 msgstr "Unknown error"
 
@@ -104,7 +104,7 @@ msgstr "String not idempotent under Unicode NFKC normalization"
 msgid "Invalid input"
 msgstr "Invalid input"
 
-#: lib/strerror-punycode.c:74 lib/strerror-stringprep.c:110
+#: lib/strerror-punycode.c:74 lib/strerror-stringprep.c:111
 msgid "Output would exceed the buffer space provided"
 msgstr "Output would exceed the buffer space provided"
 
@@ -112,39 +112,43 @@ msgstr "Output would exceed the buffer space provided"
 msgid "String size limit exceeded"
 msgstr "String size limit exceeded"
 
-#: lib/strerror-stringprep.c:90
+#: lib/strerror-stringprep.c:91
 msgid "Forbidden unassigned code points in input"
 msgstr "Forbidden unassigned code points in input"
 
-#: lib/strerror-stringprep.c:94
+#: lib/strerror-stringprep.c:95
 msgid "Prohibited code points in input"
 msgstr "Prohibited code points in input"
 
-#: lib/strerror-stringprep.c:98
+#: lib/strerror-stringprep.c:99
 msgid "Conflicting bidirectional properties in input"
 msgstr "Conflicting bidirectional properties in input"
 
-#: lib/strerror-stringprep.c:102
+#: lib/strerror-stringprep.c:103
 msgid "Malformed bidirectional string"
 msgstr "Malformed bidirectional string"
 
-#: lib/strerror-stringprep.c:106
+#: lib/strerror-stringprep.c:107
 msgid "Prohibited bidirectional code points in input"
 msgstr "Prohibited bidirectional code points in input"
 
-#: lib/strerror-stringprep.c:114
+#: lib/strerror-stringprep.c:115
 msgid "Error in stringprep profile definition"
 msgstr "Error in stringprep profile definition"
 
-#: lib/strerror-stringprep.c:118
+#: lib/strerror-stringprep.c:119
 msgid "Flag conflict with profile"
 msgstr "Flag conflict with profile"
 
-#: lib/strerror-stringprep.c:122
+#: lib/strerror-stringprep.c:123
 msgid "Unknown profile"
 msgstr "Unknown profile"
 
 #: lib/strerror-stringprep.c:126
+msgid "Could not convert string in locale encoding."
+msgstr "Could not convert string in locale encoding."
+
+#: lib/strerror-stringprep.c:130
 msgid "Unicode normalization failed (internal error)"
 msgstr "Unicode normalization failed (internal error)"
 
@@ -155,6 +159,10 @@ msgstr "Code points prohibited by top-level domain"
 #: lib/strerror-tld.c:76
 msgid "Missing input"
 msgstr "Missing input"
+
+#: lib/strerror-tld.c:84
+msgid "System iconv failed"
+msgstr "System iconv failed"
 
 #: lib/strerror-tld.c:88
 msgid "No top-level domain found in input"

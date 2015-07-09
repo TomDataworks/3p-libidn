@@ -85,7 +85,7 @@
 <hr>
 <div class="refsect2">
 <a name="STRINGPREP-VERSION:CAPS"></a><h3>STRINGPREP_VERSION</h3>
-<pre class="programlisting"># define STRINGPREP_VERSION "1.30"
+<pre class="programlisting"># define STRINGPREP_VERSION "1.31"
 </pre>
 <p>String defined via CPP denoting the header file version number.
 Used together with <code class="function">stringprep_check_version()</code> to verify header file
@@ -185,6 +185,13 @@ guaranteed to always correspond to success.</p>
 <td class="enum_member_description">
 <p>The supplied profile name was not
   known to the library.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr>
+<tr>
+<td class="enum_member_name"><p><a name="STRINGPREP-ICONV-ERROR:CAPS"></a>STRINGPREP_ICONV_ERROR</p></td>
+<td class="enum_member_description">
+<p>Could not convert string in locale encoding.</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
