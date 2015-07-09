@@ -195,6 +195,9 @@
 /* Define to 1 if you have the `getdtablesize' function. */
 #undef HAVE_GETDTABLESIZE
 
+/* Define to 1 if you have the `getlocalename_l' function. */
+#undef HAVE_GETLOCALENAME_L
+
 /* Define to 1 if you have the <getopt.h> header file. */
 #undef HAVE_GETOPT_H
 

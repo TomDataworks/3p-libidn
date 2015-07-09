@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libidn 1.25\n"
 "Report-Msgid-Bugs-To: bug-libidn@gnu.org\n"
-"POT-Creation-Date: 2015-03-02 11:36+0100\n"
+"POT-Creation-Date: 2015-07-08 23:04+0200\n"
 "PO-Revision-Date: 2012-12-17 16:42+0100\n"
 "Last-Translator: Benno Schulenberg <benno@vertaalt.nl>\n"
 "Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 
 #: lib/strerror-idna.c:82 lib/strerror-pr29.c:66 lib/strerror-punycode.c:66
-#: lib/strerror-stringprep.c:86 lib/strerror-tld.c:68
+#: lib/strerror-stringprep.c:87 lib/strerror-tld.c:68
 msgid "Success"
 msgstr "Sukceso"
 
@@ -59,11 +59,11 @@ msgstr "Ĉeno ŝanĝiĝas ĉe dua apliko de 'ToASCII'"
 msgid "Input already contain ACE prefix (`xn--')"
 msgstr "Enigo jam havas ACE-prefikson ('xn--')"
 
-#: lib/strerror-idna.c:118 lib/strerror-tld.c:84
-msgid "System iconv failed"
-msgstr "Malsukcesis sistemfunkcio 'iconv()'"
+#: lib/strerror-idna.c:118
+msgid "Could not convert string in locale encoding"
+msgstr ""
 
-#: lib/strerror-idna.c:122 lib/strerror-stringprep.c:130 lib/strerror-tld.c:80
+#: lib/strerror-idna.c:122 lib/strerror-stringprep.c:134 lib/strerror-tld.c:80
 msgid "Cannot allocate memory"
 msgstr "Mankas sufiĉa memoro"
 
@@ -72,7 +72,7 @@ msgid "System dlopen failed"
 msgstr "Malsukcesis sistemfunkcio 'dlopen()'"
 
 #: lib/strerror-idna.c:130 lib/strerror-pr29.c:78 lib/strerror-punycode.c:82
-#: lib/strerror-stringprep.c:134 lib/strerror-tld.c:92
+#: lib/strerror-stringprep.c:138 lib/strerror-tld.c:92
 msgid "Unknown error"
 msgstr "Nekonata eraro"
 
@@ -84,7 +84,7 @@ msgstr "Ĉeno ŝanĝiĝas ĉe dua apliko de Unikoda NFKC-normigo"
 msgid "Invalid input"
 msgstr "Nevalida enigo"
 
-#: lib/strerror-punycode.c:74 lib/strerror-stringprep.c:110
+#: lib/strerror-punycode.c:74 lib/strerror-stringprep.c:111
 msgid "Output would exceed the buffer space provided"
 msgstr "Eligo estus tro granda por donita bufro"
 
@@ -92,39 +92,43 @@ msgstr "Eligo estus tro granda por donita bufro"
 msgid "String size limit exceeded"
 msgstr "Limo de signoĉena grando transpasiĝis"
 
-#: lib/strerror-stringprep.c:90
+#: lib/strerror-stringprep.c:91
 msgid "Forbidden unassigned code points in input"
 msgstr "Malpermesita neatribuita kodero en enigo"
 
-#: lib/strerror-stringprep.c:94
+#: lib/strerror-stringprep.c:95
 msgid "Prohibited code points in input"
 msgstr "Malpermesita kodero en enigo"
 
-#: lib/strerror-stringprep.c:98
+#: lib/strerror-stringprep.c:99
 msgid "Conflicting bidirectional properties in input"
 msgstr "Malkongruaj dudirektaj trajtoj en enigo"
 
-#: lib/strerror-stringprep.c:102
+#: lib/strerror-stringprep.c:103
 msgid "Malformed bidirectional string"
 msgstr "Misformita dudirekta ĉeno"
 
-#: lib/strerror-stringprep.c:106
+#: lib/strerror-stringprep.c:107
 msgid "Prohibited bidirectional code points in input"
 msgstr "Malpermesita dudirekta kodero en enigo"
 
-#: lib/strerror-stringprep.c:114
+#: lib/strerror-stringprep.c:115
 msgid "Error in stringprep profile definition"
 msgstr "Eraro en difino de ĉenopretig-profilo"
 
-#: lib/strerror-stringprep.c:118
+#: lib/strerror-stringprep.c:119
 msgid "Flag conflict with profile"
 msgstr "Flaga malkongruo kun profilo"
 
-#: lib/strerror-stringprep.c:122
+#: lib/strerror-stringprep.c:123
 msgid "Unknown profile"
 msgstr "Nekonata profilo"
 
 #: lib/strerror-stringprep.c:126
+msgid "Could not convert string in locale encoding."
+msgstr ""
+
+#: lib/strerror-stringprep.c:130
 msgid "Unicode normalization failed (internal error)"
 msgstr "Malsukcesis Unikoda normigo (**interna programeraro**)"
 
@@ -135,6 +139,10 @@ msgstr "Koderoj kiuj malpermesiĝas de supera retregiono"
 #: lib/strerror-tld.c:76
 msgid "Missing input"
 msgstr "Mankanta enigo"
+
+#: lib/strerror-tld.c:84
+msgid "System iconv failed"
+msgstr "Malsukcesis sistemfunkcio 'iconv()'"
 
 #: lib/strerror-tld.c:88
 msgid "No top-level domain found in input"

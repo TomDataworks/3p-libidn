@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libidn-1.24\n"
 "Report-Msgid-Bugs-To: bug-libidn@gnu.org\n"
-"POT-Creation-Date: 2015-03-02 11:36+0100\n"
+"POT-Creation-Date: 2015-07-08 23:04+0200\n"
 "PO-Revision-Date: 2012-01-15 00:30+0200\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
 "Language-Team: Serbian <gnu@prevod.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: lib/strerror-idna.c:82 lib/strerror-pr29.c:66 lib/strerror-punycode.c:66
-#: lib/strerror-stringprep.c:86 lib/strerror-tld.c:68
+#: lib/strerror-stringprep.c:87 lib/strerror-tld.c:68
 msgid "Success"
 msgstr "Успешно"
 
@@ -53,11 +53,11 @@ msgstr "Ниска није истомоћна под ТоАСКРИ"
 msgid "Input already contain ACE prefix (`xn--')"
 msgstr "Улаз већ садржи АЦЕ префикс („xn--“)"
 
-#: lib/strerror-idna.c:118 lib/strerror-tld.c:84
-msgid "System iconv failed"
-msgstr "Иконв система није успео"
+#: lib/strerror-idna.c:118
+msgid "Could not convert string in locale encoding"
+msgstr ""
 
-#: lib/strerror-idna.c:122 lib/strerror-stringprep.c:130 lib/strerror-tld.c:80
+#: lib/strerror-idna.c:122 lib/strerror-stringprep.c:134 lib/strerror-tld.c:80
 msgid "Cannot allocate memory"
 msgstr "Не могу да доделим меморију"
 
@@ -66,7 +66,7 @@ msgid "System dlopen failed"
 msgstr "Длопен система није успео"
 
 #: lib/strerror-idna.c:130 lib/strerror-pr29.c:78 lib/strerror-punycode.c:82
-#: lib/strerror-stringprep.c:134 lib/strerror-tld.c:92
+#: lib/strerror-stringprep.c:138 lib/strerror-tld.c:92
 msgid "Unknown error"
 msgstr "Непозната грешка"
 
@@ -78,7 +78,7 @@ msgstr "Ниска није истомоћна под нормализацијо
 msgid "Invalid input"
 msgstr "Неисправан улаз"
 
-#: lib/strerror-punycode.c:74 lib/strerror-stringprep.c:110
+#: lib/strerror-punycode.c:74 lib/strerror-stringprep.c:111
 msgid "Output would exceed the buffer space provided"
 msgstr "Излаз би премашио предвиђену величину бафера"
 
@@ -86,39 +86,43 @@ msgstr "Излаз би премашио предвиђену величину �
 msgid "String size limit exceeded"
 msgstr "Премашено је ограничење величине ниске"
 
-#: lib/strerror-stringprep.c:90
+#: lib/strerror-stringprep.c:91
 msgid "Forbidden unassigned code points in input"
 msgstr "Недозвољене недодељене кодне тачке у улазу"
 
-#: lib/strerror-stringprep.c:94
+#: lib/strerror-stringprep.c:95
 msgid "Prohibited code points in input"
 msgstr "Забрањене кодне тачке у улазу"
 
-#: lib/strerror-stringprep.c:98
+#: lib/strerror-stringprep.c:99
 msgid "Conflicting bidirectional properties in input"
 msgstr "Сукобљавајућа двосмерна својства у улазу"
 
-#: lib/strerror-stringprep.c:102
+#: lib/strerror-stringprep.c:103
 msgid "Malformed bidirectional string"
 msgstr "Лоша двосмерна ниска"
 
-#: lib/strerror-stringprep.c:106
+#: lib/strerror-stringprep.c:107
 msgid "Prohibited bidirectional code points in input"
 msgstr "Забрањене двосмерне кодне тачке у улазу"
 
-#: lib/strerror-stringprep.c:114
+#: lib/strerror-stringprep.c:115
 msgid "Error in stringprep profile definition"
 msgstr "Грешка у одредници профила стрингпреп"
 
-#: lib/strerror-stringprep.c:118
+#: lib/strerror-stringprep.c:119
 msgid "Flag conflict with profile"
 msgstr "Сукоб опција са профилом"
 
-#: lib/strerror-stringprep.c:122
+#: lib/strerror-stringprep.c:123
 msgid "Unknown profile"
 msgstr "Непознат профил"
 
 #: lib/strerror-stringprep.c:126
+msgid "Could not convert string in locale encoding."
+msgstr ""
+
+#: lib/strerror-stringprep.c:130
 msgid "Unicode normalization failed (internal error)"
 msgstr "Неуспех Уникод нормализације (унутрашња грешка)"
 
@@ -129,6 +133,10 @@ msgstr "Кодне тачке забрањене доменом највишег
 #: lib/strerror-tld.c:76
 msgid "Missing input"
 msgstr "Недостаје улаз"
+
+#: lib/strerror-tld.c:84
+msgid "System iconv failed"
+msgstr "Иконв система није успео"
 
 #: lib/strerror-tld.c:88
 msgid "No top-level domain found in input"

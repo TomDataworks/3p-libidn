@@ -1,3 +1,67 @@
+2015-07-08  Simon Josefsson <simon@josefsson.org>
+
+	* NEWS: Version 1.31.
+
+2015-07-08  Simon Josefsson <simon@josefsson.org>
+
+	* THANKS: Add.
+
+2015-07-08  Simon Josefsson <simon@josefsson.org>
+
+	* lib/gl/m4/localename.m4, lib/gltests/localename.c: Update gnulib
+	files.
+
+2015-07-08  Simon Josefsson <simon@josefsson.org>
+
+	* NEWS: Add.
+
+2015-07-08  Simon Josefsson <simon@josefsson.org>
+
+	* NEWS, po/da.po.in: Sync with TP.
+
+2015-07-08  Simon Josefsson <simon@josefsson.org>
+
+	* .gitignore, NEWS, lib/gl/Makefile.am, lib/gl/m4/gnulib-cache.m4,
+	lib/gl/m4/gnulib-comp.m4, lib/gl/unistr/u8-check.c,
+	lib/gltests/Makefile.am, lib/gltests/unistr/test-u8-check.c,
+	lib/nfkc.c, lib/strerror-idna.c, lib/strerror-stringprep.c,
+	lib/stringprep.c, lib/stringprep.h, tests/Makefile.am,
+	tests/tst_badutf8.c, tests/tst_stringprep.c: libidn:
+	stringprep_utf8_to_ucs4 now rejects invalid UTF-8. CVE-2015-2059
+
+2015-07-08  Simon Josefsson <simon@josefsson.org>
+
+	* tests/tst_idna4.c: Fix broken encoding (ISO-8859-1 vs UTF-8) of
+	this file.
+
+2015-07-07  Simon Josefsson <simon@josefsson.org>
+
+	* tests/Makefile.am: Use LOG_COMPILER instead of TEST_ENVIRONMENT,
+	for valgrind.
+
+2015-07-07  Simon Josefsson <simon@josefsson.org>
+
+	* NEWS, configure.ac, lib/stringprep.h: Bump versions.  Doc fix.
+
+2015-06-04  Alessandro Ghedini <alessandro@ghedini.me>
+
+	* lib/idna.c: Use strdup() to duplicate a buffer This apparently fixes the "Invalid read of size 4" error from
+	valgrind that was reported at https://bugs.debian.org/724069 Signed-off-by: Simon Josefsson <simon@josefsson.org>
+
+2015-07-07  Simon Josefsson <simon@josefsson.org>
+
+	* build-aux/gendocs.sh, build-aux/update-copyright, gl/error.c,
+	gl/error.h, gl/m4/extern-inline.m4, gl/m4/gnulib-common.m4,
+	gl/m4/lstat.m4, gl/m4/manywarnings.m4, gl/m4/stdio_h.m4,
+	gl/stddef.in.h, gl/stdio.in.h, gl/string.in.h, gltests/init.sh,
+	gltests/inttypes.in.h, gltests/test-stddef.c, gltests/wchar.in.h,
+	lib/gl/m4/codeset.m4, lib/gl/m4/extern-inline.m4,
+	lib/gl/m4/gnulib-common.m4, lib/gl/m4/iconv.m4,
+	lib/gl/m4/intlmacosx.m4, lib/gl/m4/lcmessage.m4,
+	lib/gl/stddef.in.h, lib/gl/string.in.h, lib/gltests/init.sh,
+	lib/gltests/inttypes.in.h, lib/gltests/test-stddef.c,
+	lib/gltests/wchar.in.h: Update gnulib files.
+
 2015-03-02  Simon Josefsson <simon@josefsson.org>
 
 	* NEWS: Version 1.30.
