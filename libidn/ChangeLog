@@ -1,3 +1,40 @@
+2015-08-01  Simon Josefsson <simon@josefsson.org>
+
+	* NEWS: Version 1.32.
+
+2015-08-01  Simon Josefsson <simon@josefsson.org>
+
+	* configure.ac: Reorder AM_PROG_AR to silence autoreconf.  Drop
+	AC_PROG_LIBTOOL.
+
+2015-08-01  Simon Josefsson <simon@josefsson.org>
+
+	* NEWS, lib/idna.c: libidn: Fix crash in idna_to_unicode_8z8z and
+	idna_to_unicode_8zlz.
+
+2015-08-01  Simon Josefsson <simon@josefsson.org>
+
+	* .gitignore, THANKS, tests/Makefile.am, tests/tst_utf8crash.c: Add
+	regression check for malformed UTF-8 crash, reported by Adam
+	Sampson.
+
+2015-08-01  Simon Josefsson <simon@josefsson.org>
+
+	* gl/m4/sys_time_h.m4, gl/m4/time_h.m4, gltests/Makefile.am,
+	gltests/time.in.h: Update gnulib files.
+
+2015-08-01  Simon Josefsson <simon@josefsson.org>
+
+	* NEWS, configure.ac, lib/stringprep.h: Bump versions.
+
+2015-08-01  Simon Josefsson <simon@josefsson.org>
+
+	* doc/announce.txt: Update for 1.31.
+
+2015-07-08  Simon Josefsson <simon@josefsson.org>
+
+	* doc/announce.txt: Update for 1.30.
+
 2015-07-08  Simon Josefsson <simon@josefsson.org>
 
 	* NEWS: Version 1.31.

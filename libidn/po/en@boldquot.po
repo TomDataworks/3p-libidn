@@ -30,10 +30,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: libidn 1.31\n"
+"Project-Id-Version: libidn 1.32\n"
 "Report-Msgid-Bugs-To: bug-libidn@gnu.org\n"
-"POT-Creation-Date: 2015-07-08 23:04+0200\n"
-"PO-Revision-Date: 2015-07-08 23:04+0200\n"
+"POT-Creation-Date: 2015-08-01 15:20+0200\n"
+"PO-Revision-Date: 2015-08-01 15:20+0200\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: en@boldquot\n"
