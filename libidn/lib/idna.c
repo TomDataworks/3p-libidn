@@ -1,5 +1,5 @@
 /* idna.c --- Prototypes for Internationalized Domain Name library.
-   Copyright (C) 2002-2015 Simon Josefsson
+   Copyright (C) 2002-2016 Simon Josefsson
 
    This file is part of GNU Libidn.
 
@@ -212,6 +212,11 @@ step3:
       }
     if (i < 64)
       out[i] = '\0';
+    else
+      {
+	free (src);
+	return IDNA_INVALID_LENGTH;
+      }
     if (inasciirange)
       goto step8;
   }
@@ -266,7 +271,7 @@ step3:
 
 step8:
   free (src);
-  if (strlen (out) < 1 || strlen (out) > 63)
+  if (strlen (out) < 1)
     return IDNA_INVALID_LENGTH;
 
   return IDNA_SUCCESS;
